@@ -6,6 +6,8 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import NotMatch from './pages/NotMatch/NotMatch';
 import Header from './components/Header/Header';
+import Profile from './pages/Profile/Profile';
+import PrivateRoute from './helpers/PrivateRoute/PrivateRoute';
 
 import './App.css';
 
@@ -24,6 +26,10 @@ function App() {
                 <Route exact path='/contact'>
                     <Contact />
                 </Route>
+
+                <PrivateRoute>
+                    <Profile />
+                </PrivateRoute>
 
                 {/* Ini kalau url tidak ditemukan */}
                 <Route path='*'>
