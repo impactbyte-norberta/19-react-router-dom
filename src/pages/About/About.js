@@ -1,10 +1,16 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
+
+const Div = styled.div`
+    display: flex;
+    justify-content: center;
+`;
 
 function About() {
     return (
-        <div>
+        <Div>
             <h1>Ini Halaman About</h1>
-        </div>
+        </Div>
     );
 }
 
