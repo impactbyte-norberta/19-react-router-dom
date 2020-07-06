@@ -13,6 +13,8 @@ import NotMatch from './pages/NotMatch/NotMatch';
 import Header from './components/Header/Header';
 import Profile from './pages/Profile/Profile';
 import Login from './pages/Login/Login';
+import Articles from './pages/Articles/Articles';
+import Article from './pages/Article/Article';
 
 import PrivateRoute from './helpers/PrivateRoute/PrivateRoute';
 
@@ -35,6 +37,13 @@ function App() {
                 <Route exact path='/contact'>
                     <Contact />
                 </Route>
+                <Route exact path='/articles'>
+                    <Articles />
+                </Route>
+
+                {/* Menggunakan parameter dari link untuk ke maasing-masing halaman artikel */}
+                <Route exact path='/articles/:id' children={<Article />} />
+
                 {/* Kalau kita ke /login, dia ngecek apakah sudah login atau belum. Kalau sudah, akan diarahkan ke profile, tapi jika di back, akan diarahkan ke contact*/}
                 <Route exact path='/login'>
                     {userLogin === null ? (
